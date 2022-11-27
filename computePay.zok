@@ -1,0 +1,14 @@
+
+
+def main (u32 firstPrice, u32 secondPrice, u32 thirdPrice, u32 reservedPrice, u32 winnerServerPay, u32 winnerSellerPay, u32 sellerPay , u32 accuracy) -> bool :
+    u32[3] payment = [0,0,0]
+    u32 K3 = 0 
+    //// Checking payment scenarios
+    // First scenario thirst three largest bids are more than the reserved price
+    K3 =  if (firstPrice > reservedPrice && secondPrice > reservedPrice && thirdPrice >= reservedPrice) then thirdPrice else K3 fi
+    payment = if  (firstPrice > reservedPrice && secondPrice > reservedPrice) then [((firstPrice - secondPrice) * accuracy) /(firstPrice - K3 + 1 ), secondPrice , ((secondPrice - reservedPrice  )* accuracy) /  (secondPrice - K3 + 1)] else payment fi
+    return payment == [winnerServerPay, winnerSellerPay, sellerPay]
+        
+
+
+

@@ -1,0 +1,20 @@
+
+
+def main<N> (private field[N] m, field secondPrice, field thirdPrice) -> bool :
+    field tempSecond = 0
+    field tempThird = 0 
+    field tempFirst = 0
+    u32 firstId = 0 
+    u32 secondId = 0
+    for u32 index in 0..N do
+        secondId = if m[index] >= tempFirst then firstId else if m[index] > tempSecond then index else secondId fi fi
+        tempSecond = if m[index] >= tempFirst then tempFirst else if m[index] > tempSecond then m[index] else tempSecond fi fi
+        tempFirst = if m[index] >= tempFirst then m[index] else tempFirst fi
+        firstId  = if m[index] >= tempFirst then index else firstId fi
+	endfor
+    m[firstId] = 0 
+    m[secondId] = 0 
+    for u32 index in 0..N do
+        tempThird = if m[index] >= tempThird then m[index] else tempThird fi
+	endfor
+   return secondPrice == tempSecond && tempThird == thirdPrice

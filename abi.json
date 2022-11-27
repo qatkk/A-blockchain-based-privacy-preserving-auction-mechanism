@@ -1,0 +1,125 @@
+{
+  "inputs": [
+    {
+      "name": "winerId",
+      "public": true,
+      "type": "u32"
+    },
+    {
+      "name": "C",
+      "public": false,
+      "type": "array",
+      "components": {
+        "size": 25,
+        "type": "array",
+        "components": {
+          "size": 2,
+          "type": "field"
+        }
+      }
+    },
+    {
+      "name": "R",
+      "public": false,
+      "type": "array",
+      "components": {
+        "size": 25,
+        "type": "array",
+        "components": {
+          "size": 2,
+          "type": "field"
+        }
+      }
+    },
+    {
+      "name": "M",
+      "public": false,
+      "type": "array",
+      "components": {
+        "size": 25,
+        "type": "array",
+        "components": {
+          "size": 2,
+          "type": "field"
+        }
+      }
+    },
+    {
+      "name": "m",
+      "public": false,
+      "type": "array",
+      "components": {
+        "size": 25,
+        "type": "field"
+      }
+    },
+    {
+      "name": "s",
+      "public": false,
+      "type": "field"
+    },
+    {
+      "name": "input",
+      "public": false,
+      "type": "array",
+      "components": {
+        "size": 25,
+        "type": "u64"
+      }
+    },
+    {
+      "name": "hashInput",
+      "public": true,
+      "type": "array",
+      "components": {
+        "size": 4,
+        "type": "u64"
+      }
+    },
+    {
+      "name": "firstPrice",
+      "public": false,
+      "type": "u32"
+    },
+    {
+      "name": "secondPrice",
+      "public": false,
+      "type": "u32"
+    },
+    {
+      "name": "thirdPrice",
+      "public": false,
+      "type": "u32"
+    },
+    {
+      "name": "winnerServerPay",
+      "public": true,
+      "type": "u32"
+    },
+    {
+      "name": "winnerSellerPay",
+      "public": true,
+      "type": "u32"
+    },
+    {
+      "name": "sellerPay",
+      "public": true,
+      "type": "u32"
+    },
+    {
+      "name": "reservedPrice",
+      "public": true,
+      "type": "u32"
+    },
+    {
+      "name": "accuracy",
+      "public": true,
+      "type": "u32"
+    }
+  ],
+  "outputs": [
+    {
+      "type": "bool"
+    }
+  ]
+}

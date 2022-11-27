@@ -1,0 +1,19 @@
+{
+  "name": "biddingGenerate",
+  "version": "1.0.0",
+  "dependencies": {
+    "big-integer": "^1.6.48",
+    "bigint-conversion": "^2.1.11",
+    "circomlib": "^0.2.4",
+    "ethereumjs-tx": "^2.1.2",
+    "ethers": "^5.4.7",
+    "ffjavascript": "^0.1.0",
+    "ganache-cli": "^6.12.2",
+    "keccak256": "^1.0.3",
+    "node-fetch": "^2.6.7",
+    "sha256": "^0.2.0",
+    "sprintf-js": "^1.1.2",
+    "web3-utils": "^1.7.0",
+    "zokrates-js": "^1.0.36"
+  }
+}

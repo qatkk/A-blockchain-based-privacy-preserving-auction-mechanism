@@ -1,0 +1,14 @@
+from "./verify" import main as verify
+from  "hashes/keccak/256bit" import main as keccak256
+from "./priceVer" import main as priceVer
+from "./computePay" import main as computePay
+from "./u32_array_to_field_array" import main as u32_to_field
+
+def main(u32 winerId, private field[25][2] C, private field[25][2] R, private field[25][2] M, private field[25] m, private field s, private u64[25] input , u64[4] hashInput, private u32 firstPrice, private u32 secondPrice, private u32 thirdPrice, u32 winnerServerPay, u32 winnerSellerPay, u32 sellerPay, u32 reservedPrice, u32 accuracy) -> bool :
+	u64[4] h = keccak256::<25>(input)
+    bool hashCheck = (h == hashInput)
+	field[2] prices = u32_to_field([secondPrice, thirdPrice])
+	bool priceCheck = priceVer::<25>( m, prices[0], prices[1])
+	bool payCheck = computePay(firstPrice, secondPrice, thirdPrice, reservedPrice, winnerServerPay, winnerSellerPay, sellerPay, accuracy)
+	bool decryption = verify::<25>(winerId,C,R,M,m,s)
+	return priceCheck && hashCheck && payCheck && decryption
